@@ -7,10 +7,11 @@
     tools:context=".ArtActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:layout_width="368dp"
-        android:layout_height="495dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="395dp"
+        android:layout_height="678dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="8dp"
-        tools:listitem="@layout/list_artist1" />
+        tools:listitem="@layout/fragment_item_list" />
 </android.support.constraint.ConstraintLayout>
