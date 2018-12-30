@@ -12,8 +12,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="@+id/button2"
         app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toTopOf="@+id/button2"
-        app:srcCompat="@drawable/efe6a4d096f5ae9c43feddb42df3f370-star-stroke-icon-80-by-vexels" />
+        app:layout_constraintTop_toTopOf="@+id/button2" />
 
     <TextView
         android:id="@+id/textView2"
