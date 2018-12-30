@@ -15,11 +15,22 @@
         android:id="@+id/artist_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/artist_thumbnail"
-        android:layout_toRightOf="@+id/artist_thumbnail"
-        android:text="FLEA"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_toEndOf="@+id/textView"
+        android:text="FLEA TEST"
         android:textColor="#FFF"
-        android:layout_marginLeft="140dp"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/artist_name"
+        android:layout_marginLeft="4dp"
+        android:layout_toEndOf="@+id/artist_thumbnail"
+        android:text="NAME:"
+        android:textColor="#FFF"
+        android:textSize="20sp" />
 
 </RelativeLayout>
