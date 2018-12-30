@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">TEI_Project</string>
     <string name="art_button">ARTISTS</string>
+    <string name="bassbtn">Bass</string>
+    <string name="guitarbtn">GUITAR</string>
 </resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/guitarBtn"
+        android:layout_width="140dp"
+        android:layout_height="137dp"
+        android:layout_gravity="left"
+        android:background="@color/colorPrimary"
+        android:text="@string/guitarbtn" />
+
+    <Button
+        android:id="@+id/bassBtn"
+        android:layout_width="140dp"
+        android:layout_height="137dp"
+        android:layout_gravity="right"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/bassbtn" />
+</LinearLayout>

@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ArtActivity" />
-        <activity android:name=".ArtistSpec"></activity>
+        <activity android:name=".ArtistSpec" />
+        <activity android:name=".PedalTypes" />
     </application>
 
 </manifest>

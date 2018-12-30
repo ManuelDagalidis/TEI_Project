@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.support.v7.app.AlertDialog;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,15 +14,51 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button = findViewById(R.id.art_button);
+        Button artButton = findViewById(R.id.art_button);
 
-        button.setOnClickListener(new View.OnClickListener(){
+        artButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, ArtActivity.class));
             }
 
         });
+
+        Button pdlButton = findViewById(R.id.pdl_btn);
+
+        pdlButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder instrBuilder = new AlertDialog.Builder(MainActivity.this);
+                View mView = getLayoutInflater().inflate(R.layout.pedal_instr, null);
+                Button guitarBtn = (Button) mView.findViewById(R.id.guitarBtn);
+                Button bassBtn = (Button) mView.findViewById(R.id.bassBtn);
+
+                guitarBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, PedalTypes.class);
+                        intent.putExtra("instr", "guitar");
+                        startActivity(intent);
+                    }
+                });
+
+                bassBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, PedalTypes.class);
+                        intent.putExtra("instr", "bass");
+                        startActivity(intent);
+                    }
+
+                });
+
+                instrBuilder.setView(mView);
+                AlertDialog dialog = instrBuilder.create();
+                dialog.show();
+            }
+        });
+
     }
 }
 
