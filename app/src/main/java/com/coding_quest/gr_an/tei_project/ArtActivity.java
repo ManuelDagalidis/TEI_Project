@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -20,6 +21,12 @@ public class ArtActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_art);
+
+        // Show the custom toolbar (top bar) instead of the default one
+
+        Toolbar mainToolbar = (Toolbar) findViewById(R.id.artists_toolbar);
+        setSupportActionBar(mainToolbar);
+
         Log.d(TAG, "onCreate: started");
 
         initImageBitmaps();
