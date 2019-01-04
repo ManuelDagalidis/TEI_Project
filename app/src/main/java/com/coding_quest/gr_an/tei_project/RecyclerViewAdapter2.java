@@ -17,7 +17,8 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class RecyclerViewAdapter2 extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
+public class RecyclerViewAdapter2 extends RecyclerView.Adapter<RecyclerViewAdapter2.ViewHolder> {
+
     private static final String TAG = "RecyclerViewAdapter2";
 
     private ArrayList<String> mPedalImage = new ArrayList<>();
@@ -29,6 +30,7 @@ public class RecyclerViewAdapter2 extends RecyclerView.Adapter<RecyclerViewAdapt
         this.mPedalTypes = pedalTypes;
         this.mContext = context;
 
+    }
 
     @NonNull
     @Override
@@ -38,14 +40,14 @@ public class RecyclerViewAdapter2 extends RecyclerView.Adapter<RecyclerViewAdapt
             return holder;
         }
 
-    @Override
+        @Override
         public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         Log.d(TAG, "onBindViewHolder: called.");
 
         Glide.with(mContext)
                     .asBitmap()
                     .load(mPedalImage.get(position))
-                    .into(holder.pedalTypes);
+                    .into(holder.pedalImage);
 
         holder.pedalTypes.setText(mPedalTypes.get(position));
 
@@ -66,7 +68,6 @@ public class RecyclerViewAdapter2 extends RecyclerView.Adapter<RecyclerViewAdapt
 
         @Override
         public int getItemCount() { return mPedalTypes.size();
-            return mPedalTypes.size();
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder{
@@ -83,9 +84,6 @@ public class RecyclerViewAdapter2 extends RecyclerView.Adapter<RecyclerViewAdapt
         }
     }
 
-
-
-        }
 
 
 
