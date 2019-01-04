@@ -1,9 +1,14 @@
 package com.coding_quest.gr_an.tei_project;
 
 import android.content.Context;
+import android.content.Intent;
+
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -12,10 +17,8 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class RecyclerViewAdapter1 {
+public class RecyclerViewAdapter1 extends RecyclerView.Adapter<RecyclerViewAdapter1.ViewHolder> {
 
-
-    public class RecyclerViewAdapter1 extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
         private static final String TAG = "RecyclerViewAdapter1";
 
         private ArrayList<String> mPedalNames = new ArrayList<>();
@@ -91,6 +94,3 @@ public class RecyclerViewAdapter1 {
 
 
     }
-
-
-}
