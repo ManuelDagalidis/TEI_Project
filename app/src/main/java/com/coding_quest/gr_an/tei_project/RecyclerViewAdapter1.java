@@ -14,7 +14,7 @@ public class RecyclerViewAdapter1 {
         TextView name;
 
 
-
+        public ViewHo
 
 
     }
