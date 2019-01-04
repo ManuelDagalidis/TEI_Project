@@ -7,9 +7,19 @@
     android:background="#3d3b3b"
     tools:context=".ArtActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/artists_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="@string/artists_toolbar"/>
+
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/artists_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        android:layout_below="@+id/artists_toolbar" />
 </RelativeLayout>
