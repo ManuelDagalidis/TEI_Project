@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "679297944443",
+    "firebase_url": "https://teiproject.firebaseio.com",
+    "project_id": "teiproject",
+    "storage_bucket": "teiproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:679297944443:android:c42108f2053fb85f",
+        "android_client_info": {
+          "package_name": "com.coding_quest.gr_an.tei_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "679297944443-r39bpb0sadp0q6au546ank96tls0i4n2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.coding_quest.gr_an.tei_project",
+            "certificate_hash": "084c9874ee8273ef8ef4f29cf44ed3375559bc05"
+          }
+        },
+        {
+          "client_id": "679297944443-5asoj2on8tfv62a3komj4v9v5ibv2jvp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8pdYoVU8gmVjlNjeZWigErz-sDnlGi10"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "679297944443-5asoj2on8tfv62a3komj4v9v5ibv2jvp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
