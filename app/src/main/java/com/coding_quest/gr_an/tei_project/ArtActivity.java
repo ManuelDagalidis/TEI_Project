@@ -7,66 +7,68 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class ArtActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
-    //variables
-    private ArrayList<String> mArtistImages = new ArrayList<>();
-    private ArrayList<String> mArtistNames = new ArrayList<>();
+
+    private List<Artist> artistList;
+    private RecyclerView recyclerView;
+    private RecyclerViewAdapter adapter;
+
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_art);
 
+        Log.d(TAG, "onCreate: started");
+
         // Show the custom toolbar (top bar) instead of the default one
 
         Toolbar mainToolbar = (Toolbar) findViewById(R.id.artists_toolbar);
         setSupportActionBar(mainToolbar);
 
-        Log.d(TAG, "onCreate: started");
-
-        initImageBitmaps();
-    }
-
-    private void initImageBitmaps(){
-        Log.d(TAG, "initImageBitmaps: preparing bitmaps.");
-
-        mArtistImages.add("https://assets.radiox.co.uk/2018/08/flea-from-red-hot-chili-peppers-in-2007-1519741652-article-0.jpg");
-        mArtistNames.add("FLEA");
-
-        mArtistImages.add("https://assets.radiox.co.uk/2018/04/john-frusciante-with-red-hot-chili-peppers-in-2006-1517578088-article-0.jpg");
-        mArtistNames.add("JOHN FRUSCIANTE");
-
-        mArtistImages.add("https://hips.hearstapps.com/esquireuk.cdnds.net/15/37/original/original-kurt-cobain-style-43-jpg-151570f5.jpg");
-        mArtistNames.add("KURT COBAIN");
-
-        mArtistImages.add("https://mm.aiircdn.com/140/981036.jpg");
-        mArtistNames.add("MARCUS MILLER");
-
-        mArtistImages.add("https://www.aceshowbiz.com/images/wennpic/rage-against-the-machine-performing-at-sydney-entertainment-centre-10.jpg");
-        mArtistNames.add("TOM MORELLO");
-
-        mArtistImages.add("https://ksassets.timeincuk.net/wp/uploads/sites/55/2017/08/GettyImages-84894709-920x584.jpg");
-        mArtistNames.add("JIMMY HENDRIX");
-
-        mArtistImages.add("https://d15v4l58k2n80w.cloudfront.net/file/1396975600/29513508319/width=1280/height=720/format=JPG/fit=crop/crop=0x378+4037x2273/rev=3/t=402494/e=never/k=6f568f2d/DavidGilmourByBrianRasic_274.jpg");
-        mArtistNames.add("DAVID GILMOUR");
-
-        mArtistImages.add("http://img.wennermedia.com/social/essentials-f731032e-5ccb-4ae7-a755-923166cc967e.jpg");
-        mArtistNames.add("CHRIS CORNELL");
-
-        initRecyclerView();
-    }
-
-    private void initRecyclerView(){
-        Log.d(TAG, "initRecyclerView: init recyclerview.");
-        RecyclerView recyclerView = findViewById(R.id.artists_view);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, mArtistNames, mArtistImages);
-        recyclerView.setAdapter(adapter);
+        recyclerView = findViewById(R.id.artists_view);
+        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        artistList = new ArrayList<>();
+        adapter = new RecyclerViewAdapter(this, artistList);
+
+        recyclerView.setAdapter(adapter);
+
+        db = FirebaseFirestore.getInstance();
+
+        db.collection("artists").get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        if (!queryDocumentSnapshots.isEmpty()) {
+
+                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+
+                            for (DocumentSnapshot d : list) {
+
+                                Artist a = d.toObject(Artist.class);
+                                artistList.add(a);
+                            }
+
+                            adapter.notifyDataSetChanged();
+
+                        }
+                    }
+                });
     }
 }
+

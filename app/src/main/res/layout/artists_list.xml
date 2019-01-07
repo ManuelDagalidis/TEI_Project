@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/artistlist_layout">
+    android:id="@+id/artistlist_layout"
+    android:background="#3d3b3b">
 
     <ImageView
         android:id="@+id/artist_thumbnail"
@@ -19,6 +20,7 @@
         android:layout_marginLeft="8dp"
         android:layout_toEndOf="@+id/textView"
         android:text="FLEA TEST"
+        android:textAllCaps="true"
         android:textColor="#FFF"
         android:textSize="20sp" />
 
@@ -27,10 +29,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/artist_name"
-        android:layout_marginLeft="4dp"
         android:layout_toEndOf="@+id/artist_thumbnail"
+        android:background="#a1cb2222"
         android:text="NAME:"
         android:textColor="#FFF"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
