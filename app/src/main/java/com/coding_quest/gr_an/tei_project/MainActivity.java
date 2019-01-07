@@ -1,6 +1,7 @@
 package com.coding_quest.gr_an.tei_project;
 
 import android.content.Intent;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -51,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
                 guitarBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(MainActivity.this, PedalTypes.class);
-                        intent.putExtra("instr", "guitar");
+                        Intent intent = new Intent(MainActivity.this, PedalList.class);
+                        intent.putExtra("instrument", "guitar");
                         startActivity(intent);
                     }
                 });
@@ -62,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
                 bassBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(MainActivity.this, PedalTypes.class);
-                        intent.putExtra("instr", "bass");
+                        Intent intent = new Intent(MainActivity.this, PedalList.class);
+                        intent.putExtra("instrument", "bass");
                         startActivity(intent);
                     }
 
