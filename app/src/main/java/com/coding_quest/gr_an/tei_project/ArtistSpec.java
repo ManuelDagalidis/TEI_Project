@@ -43,6 +43,8 @@ public class ArtistSpec extends AppCompatActivity {
 
         TextView artistName = (TextView) findViewById(R.id.artistName);
         TextView artistBand = (TextView) findViewById(R.id.artistBand);
+        TextView sName = (TextView) findViewById(R.id.name);
+        TextView sBand = (TextView) findViewById(R.id.band);
         Toolbar artistToolbar = (Toolbar) findViewById(R.id.spec_toolbar);
         ImageView artistImage = (ImageView) findViewById(R.id.artistImg);
 
@@ -53,8 +55,10 @@ public class ArtistSpec extends AppCompatActivity {
                 .load(artist.getImgurl())
                 .into(artistImage);
 
-        artistName.setText(artist.getName());
-        artistBand.setText(artist.getBand());
+        artistName.setText(" " + artist.getName() + " ");
+        artistBand.setText(" " + artist.getBand() + " ");
+        sName.setText(" name ");
+        sBand.setText(" band ");
         artistToolbar.setTitle(artist.getName().toUpperCase());
 
         // Initialize the RecyclerView Adapter for the artists_spec layout

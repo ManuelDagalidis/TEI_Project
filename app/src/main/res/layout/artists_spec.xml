@@ -31,8 +31,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/left_rounded_rectangle"
-        android:text="FLEA"
+        android:text="COBAIN"
+        android:textAlignment="center"
         android:textAllCaps="true"
+        android:textColor="#000"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/artistImg"
         app:layout_constraintStart_toStartOf="parent" />
@@ -44,10 +47,40 @@
         android:layout_height="wrap_content"
         android:background="@drawable/right_rounded_rectangle"
         android:text="RED HOT CHILI PEPPERS"
-        android:textAlignment="viewEnd"
+        android:textAlignment="center"
         android:textAllCaps="true"
+        android:textColor="#000"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/artistImg"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/left_rounded_rectangle2"
+        android:text="@string/name"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/artistName"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/band"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/right_rounded_rectangle2"
+        android:text="band"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/artistBand"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
