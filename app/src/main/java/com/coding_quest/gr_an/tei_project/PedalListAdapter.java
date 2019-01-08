@@ -9,16 +9,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
 import java.util.List;
+import java.util.Random;
 
 public class PedalListAdapter extends RecyclerView.Adapter<PedalListAdapter.aPedalViewHolder> {
 
     private Context mContext;
     private List<Pedal> pedalList;
+
+    private Random rand;
 
     public PedalListAdapter(Context mContext, List<Pedal> pedalList) {
         this.mContext = mContext;
@@ -38,6 +42,7 @@ public class PedalListAdapter extends RecyclerView.Adapter<PedalListAdapter.aPed
     public void onBindViewHolder(@NonNull aPedalViewHolder holder, int position) {
         Pedal pedal = pedalList.get(position);
 
+
         Glide.with(mContext)
                 .asBitmap()
                 .load(pedal.getImgurl())
@@ -45,8 +50,7 @@ public class PedalListAdapter extends RecyclerView.Adapter<PedalListAdapter.aPed
 
         holder.pedalName.setText(pedal.getName());
         holder.pedalEffect.setText(pedal.getEffect());
-        holder.pedalManu.setText(pedal.getManufacturer());
-        holder.pedalInstr.setText(pedal.getInstrument());
+
     }
 
     public int getItemCount() {
@@ -58,6 +62,8 @@ public class PedalListAdapter extends RecyclerView.Adapter<PedalListAdapter.aPed
         ImageView pedalImage;
         TextView pedalName, pedalEffect, pedalManu, pedalInstr;
         RelativeLayout pedalLayout;
+        TableLayout pedalTable;
+
 
         public aPedalViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -65,9 +71,9 @@ public class PedalListAdapter extends RecyclerView.Adapter<PedalListAdapter.aPed
             pedalImage = itemView.findViewById(R.id.pedal_image);
             pedalName = itemView.findViewById(R.id.pedal_name);
             pedalEffect = itemView.findViewById(R.id.pedal_effect);
-            pedalManu = itemView.findViewById(R.id.pedal_manu);
-            pedalInstr = itemView.findViewById(R.id.pedal_instr);
             pedalLayout = itemView.findViewById(R.id.pedal_list_layout);
+            pedalTable = itemView.findViewById(R.id.pedal_table);
+
 
             itemView.setOnClickListener(this);
         }

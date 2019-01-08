@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Pedal implements Serializable {
 
-    private String name, effect, imgurl, instrument, manufacturer;
+    private String name, effect, imgurl, instrument, manufacturer, type;
 
     public Pedal ()
     {
@@ -17,6 +17,7 @@ public class Pedal implements Serializable {
         this.imgurl = imgurl;
         this.instrument = instrument;
         this.manufacturer = manufacturer;
+        this.type = type;
     }
 
     public String getName() {
@@ -37,5 +38,9 @@ public class Pedal implements Serializable {
 
     public String getManufacturer() {
         return manufacturer;
+    }
+
+    public String getType() {
+        return type;
     }
 }

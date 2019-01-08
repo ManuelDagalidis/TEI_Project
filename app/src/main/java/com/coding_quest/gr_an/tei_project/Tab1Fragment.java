@@ -43,7 +43,7 @@ public class Tab1Fragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
-        instrument = getArguments().getString("instrument");
+        // instrument = getArguments().getString("instrument");
 
         View view = inflater.inflate(R.layout.fragment_pedal_list, container, false);
 
@@ -60,15 +60,7 @@ public class Tab1Fragment extends Fragment {
 
         CollectionReference pedalsRef = db.collection("pedals");
 
-        pedalsRef.whereEqualTo("effect", "reverb")
-                 .whereEqualTo("effect", "delay/modulation")
-                 .whereEqualTo("effect", "phaser")
-                 .whereEqualTo("effect", "flanger/chorus")
-                 .whereEqualTo("effect", "octave")
-                 .whereEqualTo("effect", "envelope filter")
-                 .whereEqualTo("effect", "delay")
-                 .whereEqualTo("effect", "tremolo")
-                 .whereEqualTo("effect", "flanger")
+        pedalsRef.whereEqualTo("type", "modulation")
                  .get()
                  .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                      @Override
