@@ -8,6 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.support.v7.app.AlertDialog;
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -17,14 +20,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Show the custom toolbar (top bar) instead of the default one
+
+        ImageView artButton = findViewById(R.id.imageView5);
+        ImageView pdlButton = findViewById(R.id.imageView10);
 
         Toolbar mainToolbar = (Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(mainToolbar);
 
-        // Button for the Artist List
+        Glide.with(this)
+                .asBitmap()
+                .load("https://assets.radiox.co.uk/2018/08/flea-from-red-hot-chili-peppers-in-2007-1519741652-article-0.jpg")
+                .into(artButton);
 
-        Button artButton = findViewById(R.id.art_button);
+        Glide.with(this)
+                .asBitmap()
+                .load("https://www.stratcat.biz/images/pedal_board_11132010_950.jpg")
+                .into(pdlButton);
+
 
         artButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -34,50 +46,14 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        // Button for the Pedal List, prompting an AlertDialog
-
-        Button pdlButton = findViewById(R.id.pdl_btn);
 
         pdlButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder instrBuilder = new AlertDialog.Builder(MainActivity.this);
-                View mView = getLayoutInflater().inflate(R.layout.pedal_instr, null);
-
-                Button guitarBtn = (Button) mView.findViewById(R.id.guitarBtn);
-                Button bassBtn = (Button) mView.findViewById(R.id.bassBtn);
-
-                // What happens when user clicks on Guitar Button
-
-                guitarBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(MainActivity.this, PedalList.class);
-                        intent.putExtra("instrument", "guitar");
-                        startActivity(intent);
-                    }
-                });
-
-                // What happens when user clicks on Bass Button
-
-                bassBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(MainActivity.this, PedalList.class);
-                        intent.putExtra("instrument", "bass");
-                        startActivity(intent);
-                    }
-
-                });
-
-                // Show the AlertDialog when the Pedal Types button has been clicked
-
-                instrBuilder.setView(mView);
-                AlertDialog dialog = instrBuilder.create();
-                dialog.show();
+                Intent intent = new Intent(MainActivity.this, PedalList.class);
+                startActivity(intent);
             }
         });
-
     }
 }
 

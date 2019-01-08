@@ -15,14 +15,12 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
-import java.util.Random;
 
 public class PedalListAdapter extends RecyclerView.Adapter<PedalListAdapter.aPedalViewHolder> {
 
     private Context mContext;
     private List<Pedal> pedalList;
 
-    private Random rand;
 
     public PedalListAdapter(Context mContext, List<Pedal> pedalList) {
         this.mContext = mContext;
@@ -60,7 +58,7 @@ public class PedalListAdapter extends RecyclerView.Adapter<PedalListAdapter.aPed
     class aPedalViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView pedalImage;
-        TextView pedalName, pedalEffect, pedalManu, pedalInstr;
+        TextView pedalName, pedalEffect;
         RelativeLayout pedalLayout;
         TableLayout pedalTable;
 

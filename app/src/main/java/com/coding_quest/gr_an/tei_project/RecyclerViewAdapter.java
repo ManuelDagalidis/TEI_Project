@@ -49,6 +49,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 .into(holder.artistImage);
 
         holder.artistName.setText(artist.getName());
+        holder.artistBand.setText(artist.getBand());
 
     }
 
@@ -60,13 +61,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         ImageView artistImage;
-        TextView artistName;
+        TextView artistName, artistBand;
         RelativeLayout artistlistLayout;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             artistImage = itemView.findViewById(R.id.artist_thumbnail);
             artistName = itemView.findViewById(R.id.artist_name);
+            artistBand = itemView.findViewById(R.id.artist_band);
             artistlistLayout = itemView.findViewById(R.id.artistlist_layout);
 
             itemView.setOnClickListener(this);

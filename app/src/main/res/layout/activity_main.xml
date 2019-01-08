@@ -13,7 +13,8 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="#000"/>
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline5"
@@ -42,50 +43,22 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="center"
-        app:layout_constraintBottom_toBottomOf="@+id/art_button"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/main_toolbar"
         app:srcCompat="@drawable/flea" />
-
-    <Button
-        android:id="@+id/art_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/colorAccent"
-        android:fontFamily="@font/boomerang"
-        android:text="@string/art_button"
-        android:textColor="@color/colorPrimary"
-        android:textSize="46sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageView10"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline6"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
-        tools:srcCompat="@tools:sample/avatars[1]" />
-
-    <Button
-        android:id="@+id/pdl_btn"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/colorAccent"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
-        app:layout_constraintEnd_toEndOf="@+id/imageView10"
-        app:layout_constraintStart_toStartOf="@+id/imageView10"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline3"
+        tools:srcCompat="@drawable/pedal_board" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
@@ -93,5 +66,38 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="56dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="283dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ARTISTS"
+        android:textColor="@color/textColor"
+        android:textStyle="bold"
+        android:textSize="50sp"
+        app:layout_constraintTop_toTopOf="@id/imageView5"
+        app:layout_constraintBottom_toBottomOf="@id/imageView5"
+        app:layout_constraintStart_toStartOf="@id/imageView5"
+        app:layout_constraintEnd_toEndOf="@id/imageView5"/>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PEDALS"
+        android:textColor="@color/textColor2"
+        android:textStyle="bold"
+        android:textSize="50sp"
+        app:layout_constraintTop_toTopOf="@id/imageView10"
+        app:layout_constraintBottom_toBottomOf="@id/imageView10"
+        app:layout_constraintStart_toStartOf="@id/imageView10"
+        app:layout_constraintEnd_toEndOf="@id/imageView10"/>
 
 </android.support.constraint.ConstraintLayout>

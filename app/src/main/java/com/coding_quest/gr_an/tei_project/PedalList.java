@@ -53,9 +53,9 @@ public class PedalList extends AppCompatActivity {
         EffectPageAdapter adapter = new EffectPageAdapter(getSupportFragmentManager());
 
         adapter.addFragment(new Tab1Fragment(), "MODULATION");
-    //    adapter.addFragment(new Tab2Fragment(), "DISTORTION");
-    //    adapter.addFragment(new Tab3Fragment(), "MODULATION");
-    //    adapter.addFragment(new Tab4Fragment(), "MODULATION");
+        adapter.addFragment(new Tab2Fragment(), "DISTORTION");
+        adapter.addFragment(new Tab3Fragment(), "PITCH SHIFTERS");
+        adapter.addFragment(new Tab4Fragment(), "MISC");
 
         viewPager.setAdapter(adapter);
     }
