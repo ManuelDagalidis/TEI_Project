@@ -40,24 +40,32 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="145dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:scaleType="center"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_toolbar"
         app:srcCompat="@drawable/flea" />
 
     <ImageView
         android:id="@+id/imageView10"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="145dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
         tools:srcCompat="@drawable/pedal_board" />
 
     <android.support.constraint.Guideline
@@ -75,29 +83,29 @@
         app:layout_constraintGuide_begin="283dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/artText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ARTISTS"
         android:textColor="@color/textColor"
+        android:textSize="30sp"
         android:textStyle="bold"
-        android:textSize="50sp"
-        app:layout_constraintTop_toTopOf="@id/imageView5"
         app:layout_constraintBottom_toBottomOf="@id/imageView5"
+        app:layout_constraintEnd_toEndOf="@id/imageView5"
         app:layout_constraintStart_toStartOf="@id/imageView5"
-        app:layout_constraintEnd_toEndOf="@id/imageView5"/>
+        app:layout_constraintTop_toTopOf="@id/imageView5" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/pdlText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PEDALS"
         android:textColor="@color/textColor2"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:textSize="50sp"
-        app:layout_constraintTop_toTopOf="@id/imageView10"
         app:layout_constraintBottom_toBottomOf="@id/imageView10"
+        app:layout_constraintEnd_toEndOf="@id/imageView10"
         app:layout_constraintStart_toStartOf="@id/imageView10"
-        app:layout_constraintEnd_toEndOf="@id/imageView10"/>
+        app:layout_constraintTop_toTopOf="@id/imageView10" />
 
 </android.support.constraint.ConstraintLayout>

@@ -6,9 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.support.v7.app.AlertDialog;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
@@ -20,9 +23,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.fadein);
+
 
         ImageView artButton = findViewById(R.id.imageView5);
         ImageView pdlButton = findViewById(R.id.imageView10);
+        TextView artText = findViewById(R.id.artText);
+        TextView pedalText = findViewById(R.id.pdlText);
+
+        artButton.startAnimation(animation);
+        pdlButton.startAnimation(animation);
+        artText.startAnimation(animation);
+        pedalText.startAnimation(animation);
 
         Toolbar mainToolbar = (Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(mainToolbar);

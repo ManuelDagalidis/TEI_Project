@@ -3,7 +3,12 @@ package com.coding_quest.gr_an.tei_project;
 import android.content.Context;
 import android.content.Intent;
 
+import android.content.res.Resources;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -41,6 +46,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         Log.d(TAG, "onBindViewHolder: called.");
 
+
+        Resources resources = mContext.getResources();
+        Drawable mRect = ContextCompat.getDrawable(mContext, R.drawable.rounded_rectangle).mutate();
+
         Artist artist = artistList.get(position);
 
         Glide.with(mContext)
@@ -50,6 +59,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         holder.artistName.setText(artist.getName());
         holder.artistBand.setText(artist.getBand());
+
+
+        if((position % 2) == 0)
+        {
+            mRect.setColorFilter(new PorterDuffColorFilter(resources.getColor(R.color.colorTrue), PorterDuff.Mode.SRC_IN));
+            holder.artistlistLayout.setBackground(mRect);
+        }
+        else if((position % 2) == 1)
+        {
+            mRect.setColorFilter(new PorterDuffColorFilter(resources.getColor(R.color.colorFalse), PorterDuff.Mode.SRC_IN));
+            holder.artistlistLayout.setBackground(mRect);
+
+        }
 
     }
 

@@ -7,4 +7,6 @@
     <color name="nameandband2">#8bff8400</color>
     <color name="textColor">#00fff7</color>
     <color name="textColor2">#ff0011</color>
+    <color name="colorTrue">#2a2030</color>
+    <color name="colorFalse">#1e2c33</color>
 </resources>
