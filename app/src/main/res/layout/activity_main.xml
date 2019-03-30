@@ -10,11 +10,20 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/main_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="57dp"
         android:background="?attr/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:titleTextColor="#000"/>
+        app:titleTextColor="#000" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+        android:background="@drawable/menu_button"
+        android:elevation="0dp"
+        app:layout_constraintStart_toStartOf="@+id/main_toolbar"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline5"
@@ -38,36 +47,6 @@
         app:layout_constraintGuide_percent="0.70" />
 
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="145dp"
-        android:layout_height="145dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:scaleType="center"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_toolbar"
-        app:srcCompat="@drawable/flea" />
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="145dp"
-        android:layout_height="145dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline6"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
-        tools:srcCompat="@drawable/pedal_board" />
-
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
@@ -75,37 +54,229 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="56dp" />
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="283dp" />
+    <FrameLayout
+        android:id="@+id/artists_frame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bottom_rounded_rectangle2"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guideline6"
+        app:layout_constraintTop_toBottomOf="@+id/main_toolbar">
 
-    <TextView
-        android:id="@+id/artText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ARTISTS"
-        android:textColor="@color/textColor"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/imageView5"
-        app:layout_constraintEnd_toEndOf="@id/imageView5"
-        app:layout_constraintStart_toStartOf="@id/imageView5"
-        app:layout_constraintTop_toTopOf="@id/imageView5" />
+        <ImageView
+            android:id="@+id/artist_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/artists" />
 
-    <TextView
-        android:id="@+id/pdlText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PEDALS"
-        android:textColor="@color/textColor2"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/imageView10"
-        app:layout_constraintEnd_toEndOf="@id/imageView10"
-        app:layout_constraintStart_toStartOf="@id/imageView10"
-        app:layout_constraintTop_toTopOf="@id/imageView10" />
+        <TextView
+            android:id="@+id/artist_text"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bottom_rounded_rectangle"
+            android:text="ARTISTS"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"/>
+
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/pedals_frame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bottom_rounded_rectangle2"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintLeft_toRightOf="@id/guideline6"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_toolbar">
+
+        <ImageView
+            android:id="@+id/pedals_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/artists" />
+
+        <TextView
+            android:id="@+id/pedals_text"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bottom_rounded_rectangle"
+            android:text="PEDALS"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/chain_frame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bottom_rounded_rectangle2"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/guideline6"
+        app:layout_constraintTop_toBottomOf="@+id/guideline5">
+
+        <ImageView
+            android:id="@+id/chain_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/artists" />
+
+        <TextView
+            android:id="@+id/chain_text"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bottom_rounded_rectangle"
+            android:text="YOUR CHAIN"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/stores_frame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bottom_rounded_rectangle2"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+        app:layout_constraintLeft_toRightOf="@+id/guideline6"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline5">
+
+        <ImageView
+            android:id="@+id/stores_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/artists" />
+
+        <TextView
+            android:id="@+id/stores_text"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bottom_rounded_rectangle"
+            android:text="STORES"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/news_frame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bottom_rounded_rectangle2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/guideline6"
+        app:layout_constraintTop_toBottomOf="@id/guideline7">
+
+        <ImageView
+            android:id="@+id/news_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/artists" />
+
+        <TextView
+            android:id="@+id/news_text"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bottom_rounded_rectangle"
+            android:text="NEWS"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/toprated_frame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bottom_rounded_rectangle2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/guideline6"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline7">
+
+        <ImageView
+            android:id="@+id/toprated_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/artists" />
+
+        <TextView
+            android:id="@+id/toprated_text"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bottom_rounded_rectangle"
+            android:text="TOP RATED"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+        android:background="@drawable/lightbulb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

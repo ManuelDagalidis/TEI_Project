@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#ea00ff</color>
+    <color name="colorPrimary">#922a0966</color>
     <color name="colorPrimaryDark">#00574b</color>
     <color name="colorAccent">#00790a32</color>
     <color name="nameandband">#8bc52ad9</color>
     <color name="nameandband2">#8bff8400</color>
     <color name="textColor">#00fff7</color>
     <color name="textColor2">#ff0011</color>
-    <color name="colorTrue">#2a2030</color>
+    <color name="colorTrue">#202e30</color>
     <color name="colorFalse">#1e2c33</color>
+    <color name="btn_color">#54ffffff</color>
 </resources>
