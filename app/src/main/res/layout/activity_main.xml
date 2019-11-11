@@ -72,8 +72,8 @@
             android:id="@+id/artist_img"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/artists" />
+            android:scaleType="fitCenter"
+            android:src="@drawable/artist" />
 
         <TextView
             android:id="@+id/artist_text"
@@ -218,7 +218,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/artists" />
+            android:src="@drawable/news" />
 
         <TextView
             android:id="@+id/news_text"
